@@ -20,8 +20,6 @@
 ```bash
     cd media<tab>
     ./build
-    sudo make install 
-    # Sorry guys, it's a kernet module, you can not install without root privileges.
 ```
 Modify `Makefile` according to your system.
 ```
@@ -36,12 +34,14 @@ INCLUDE_EXTRA_DVB := include-320
 Do some magic.
 ```bash
     make
+    sudo make install
+    # Sorry guys, it's a kernet module, you can not install without root privileges.
 ```
 
 * Clone `git://git.osmocom.org/rtl-sdr.git`
 ```bash
     cd rtl-sdr
-    git checkout tags/v0.5.2 # Versions +0.5.3 don't work!!!!!!!
+    git checkout tags/v0.5.2 # Versions >0.5.2 don't work!!!!!!!
     libtoolize
     autoreconf -fiv
     ./configure --prefix=<Somepath you want> # If you use /opt I will find you and I will kill you.
@@ -97,5 +97,5 @@ But you're free to do it.
 ```bash
     ./dump1090 --interactive --net
 ```
-* And that's your (http://www.youtube.com/watch?v=-YCN-a0NsNk)[reward].
+* And that's your [reward](http://www.youtube.com/watch?v=-YCN-a0NsNk).
 
