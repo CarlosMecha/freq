@@ -59,6 +59,24 @@ could be different for each pincho.
     service udev restart
     ls -l /dev/
 ```
+* Disable default drivers for the pincho. I don't want to remove permanently the drivers since I want
+to use it for watching DVB-T.
+```bash
+    sudo modprobe -r dvb_usb_rtl28xxu
+    sudo modprobe -r rtl2830
+    sudo modprobe -r rtl2832
+```
+But you're free to do it.
+```bash
+    (
+    cat <<'EOF'
+      blacklist dvb_usb_rtl28xxu
+      blacklist rtl2830
+      blacklist rtl2832
+    EOF
+    ) > /etc/modprobe.d/blacklist-dvb
+```
+
 * Test the pincho:
 ```bash
     <prefix>/bin/rtl_test
