@@ -9,6 +9,32 @@
     * `libusb-1.0-0-dev`
     * `autotools-dev`
     * `libtool`
+    * `linux-headers-$(uname -r)`
+    * `dvb-apps`
+    * `dvb-tools`
+    * `patchutils`
+    * `libproc-processtable-perl`
+* Clone `git://linuxtv.org/media_build.git`
+```bash
+    cd media<tab>
+    ./build
+    sudo make install 
+    # Sorry guys, it's a kernet module, you can not install without root privileges.
+```
+Modify `Makefile` according to your system.
+```
+...
+# kernel 3.0.0 / 3.1.0
+#INCLUDE_EXTRA_DVB := include-300
+
+# kernel 3.2.0
+INCLUDE_EXTRA_DVB := include-320
+...
+```
+Do some magic.
+```bash
+    make
+```
 
 * Clone `git://git.osmocom.org/rtl-sdr.git`
 ```bash
