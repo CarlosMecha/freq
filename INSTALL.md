@@ -10,10 +10,12 @@
     * `autotools-dev`
     * `libtool`
     * `linux-headers-$(uname -r)`
+    * `libproc-processtable-perl`
+* Those are optional packages:
     * `dvb-apps`
     * `dvb-tools`
     * `patchutils`
-    * `libproc-processtable-perl`
+    * `w-scan`
 * Clone `git://linuxtv.org/media_build.git`
 ```bash
     cd media<tab>
@@ -39,6 +41,7 @@ Do some magic.
 * Clone `git://git.osmocom.org/rtl-sdr.git`
 ```bash
     cd rtl-sdr
+    git checkout tags/v0.5.2 # Versions +0.5.3 don't work!!!!!!!
     libtoolize
     autoreconf -fiv
     ./configure --prefix=<Somepath you want> # If you use /opt I will find you and I will kill you.
@@ -60,7 +63,7 @@ could be different for each pincho.
     ls -l /dev/
 ```
 * Disable default drivers for the pincho. I don't want to remove permanently the drivers since I want
-to use it for watching DVB-T.
+to use it for watching DVB-T and listening FM radio.
 ```bash
     sudo modprobe -r dvb_usb_rtl28xxu
     sudo modprobe -r rtl2830
@@ -94,5 +97,5 @@ But you're free to do it.
 ```bash
     ./dump1090 --interactive --net
 ```
-
+* And that's your (http://www.youtube.com/watch?v=-YCN-a0NsNk)[reward].
 
