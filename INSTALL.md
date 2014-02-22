@@ -19,14 +19,14 @@
     make
     make install # You might need root privileges if you install it into some dangerous directory.
 ```
-* Give non-root permisions to the pincho. There\'s a lot of ways to do that, but I don\'t trust
+* Give non-root permisions to the pincho. There's a lot of ways to do that, but I don't trust
 3rd party rules. The easiest way is `make install-udev-rules`, the best way is:
 ```bash
     lsbub
 ```
-    Get the `idVendor` and `idProduct` numbers. The pincho is called `Realtek Semiconductor 
-    Corp. RTL2838 DVB-T` with `idVendor = 0bda` and `idProduct = 2838` but remember this
-    could be different for each pincho.
+Get the `idVendor` and `idProduct` numbers. The pincho is called `Realtek Semiconductor 
+Corp. RTL2838 DVB-T` with `idVendor = 0bda` and `idProduct = 2838` but remember this
+could be different for each pincho.
 ```bash
     # Superuser
     echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="2838", MODE:="0666"' > /etc/udev/rules.d/pincho.rules
