@@ -16,10 +16,10 @@
     * `libtool`
     * `linux-headers-$(uname -r)`
     * `libproc-processtable-perl`
+    * `patchutils`
 * Those are optional packages:
     * `dvb-apps`
     * `dvb-tools`
-    * `patchutils`
     * `w-scan`
 
 * Clone `git://linuxtv.org/media_build.git`
@@ -40,6 +40,8 @@ Do some magic. It's a kernel module, you can't install it without root privilege
     make
     sudo make install
 ```
+**DISCLAIMER:** For some reason, installing those drivers will screw up the uvcvideo
+drivers (your webcam won't work anymore). Trying to solve it...
 
 * Clone `git://git.osmocom.org/rtl-sdr.git`
 ```bash
